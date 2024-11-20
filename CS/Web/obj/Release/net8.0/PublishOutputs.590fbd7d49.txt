@@ -1,0 +1,7 @@
+C:\CS\Web\publish\Web.exe
+C:\CS\Web\publish\appsettings.Development.json
+C:\CS\Web\publish\appsettings.json
+C:\CS\Web\publish\Web.dll
+C:\CS\Web\publish\Web.deps.json
+C:\CS\Web\publish\Web.runtimeconfig.json
+C:\CS\Web\publish\Web.pdb

@@ -1,31 +1,25 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Web.Models;
 
 namespace Web.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
+    // Метод для отображения формы
+    [HttpGet]
     public IActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    // Метод для обработки данных из формы
+    [HttpPost]
+    public IActionResult SubmitForm(string username, string email)
     {
-        return View();
-    }
+        // Вывод данных в консоль
+        Console.WriteLine($"Полученные данные: Имя = {username}, Email = {email}");
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        // Дополнительно вернуть результат на страницу
+        ViewBag.Message = $"Данные получены: Имя = {username}, Email = {email}";
+        return View("Result"); // Переход на страницу с результатами
     }
 }
